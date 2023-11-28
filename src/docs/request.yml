@@ -1,0 +1,96 @@
+components:
+  parameters:
+    schemas:
+      Products:
+        type: object
+        required:
+          -title
+          -description
+          -code
+          -price
+          -status
+          -stock
+          -category
+          -thumbnails
+          -owner
+        properties:
+          title: 
+            type: string
+            description: Name of the product
+          description: 
+            type: string
+            description: Description of the product
+          code: 
+            type: string
+            description: Code of the product
+          price: 
+            type: number
+            description: Price of the product
+          status: 
+            type: boolean 
+            description: Status of the product
+          stock: 
+            type: number
+            description: Stock of the product
+          category: 
+            type: string
+            description: Category of the product
+          thumbnails: 
+            type: string
+            description: Image of the product
+          owner: 
+            type: string
+            description: ID number of the owner of the product or ADMIN as default
+        example: 
+          title: Ron Havana Club Añejo 7 años
+          description: Ron cubano añejo con un equilibrio de sabores excepcional.
+          code: HC011
+          price: 1500
+          status: true
+          stock: 22
+          category: Ron
+          thumbnails: https://senseoftaste.com.au/cdn/shop/products/SOTE-Commresizing4_43_800x.png?v=1630558437
+          owner: admin
+      
+      CartProduct:
+        type: object
+        required:
+          -ProductID
+          -quantity
+        properties:
+          ProductID:
+            type: string
+            description: ID of the product that is in the cart
+          quantity:
+            type: number
+            description: Quantity of the product 
+        example:
+          ProductID: 5f4e23c976f099001f995a3a
+          quantity: 2
+
+      Cart:
+        type: array  
+        description: Carts of user
+        items:
+          $ref: '#/components/parameters/schemas/CartProduct'
+        example:
+          id_: 650a770add40087430f909a8
+          products: []
+
+      Users:
+        type: object
+        description: Users
+        required:
+          -email
+          -password
+        properties:
+          email:
+            type: string
+            description: Email address
+          password:
+            type: string
+            description: Password
+        example:
+          email: serafer3+admin@gmail.com
+          password: "123"
+         

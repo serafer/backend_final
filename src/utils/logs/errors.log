@@ -1,0 +1,58 @@
+info | 10-08-2023 02:40:43 | Persistence: mongo
+info | 10-08-2023 02:40:43 | Server listening on port 8080
+info | 10-08-2023 02:40:53 | imprimo info
+warning | 10-08-2023 02:40:53 | imprimo warning
+error | 10-08-2023 02:40:53 | imprimo error
+fatal | 10-08-2023 02:40:53 | imprimo fatal
+info | 10-16-2023 16:40:43 | Persistence: mongo
+info | 10-16-2023 16:40:43 | Server listening on port 8080
+info | 10-16-2023 16:45:50 | Persistence: mongo
+info | 10-16-2023 16:45:50 | Server listening on port 8080
+info | 10-16-2023 18:08:37 | Persistence: mongo
+info | 10-16-2023 18:08:38 | Server listening on port 8080
+fatal | 10-29-2023 20:13:42 | Error DAO:Operation `products.countDocuments()` buffering timed out after 10000ms
+info | 10-30-2023 01:12:07 | Persistence: mongo
+info | 10-30-2023 01:12:35 | Persistence: mongo
+info | 10-30-2023 01:12:35 | Server listening on port 8080
+info | 10-30-2023 01:13:29 | Persistence: mongo
+info | 10-30-2023 01:13:29 | Server listening on port 8080
+info | 10-30-2023 01:14:19 | Persistence: mongo
+info | 10-30-2023 01:14:19 | Server listening on port 8080
+info | 10-30-2023 01:15:14 | Persistence: mongo
+info | 10-30-2023 01:15:14 | Server listening on port 8080
+info | 10-30-2023 01:16:05 | Persistence: mongo
+info | 10-30-2023 01:16:05 | Server listening on port 8080
+info | 10-30-2023 01:21:40 | Persistence: mongo
+info | 10-30-2023 01:21:40 | Server listening on port 8080
+info | 10-30-2023 01:22:28 | Persistence: mongo
+info | 10-30-2023 01:22:28 | Server listening on port 8080
+info | 10-30-2023 01:23:36 | Persistence: mongo
+info | 10-30-2023 01:23:36 | Server listening on port 8080
+info | 10-30-2023 01:24:47 | Persistence: mongo
+info | 10-30-2023 01:24:48 | Server listening on port 8080
+info | 10-30-2023 01:26:03 | Persistence: mongo
+info | 10-30-2023 01:26:03 | Server listening on port 8080
+info | 10-30-2023 01:27:12 | Persistence: mongo
+info | 10-30-2023 01:27:12 | Server listening on port 8080
+info | 10-30-2023 01:42:24 | Persistence: mongo
+info | 10-30-2023 01:42:24 | Server listening on port 8080
+info | 10-30-2023 01:43:42 | Persistence: mongo
+info | 10-30-2023 01:43:42 | Server listening on port 8080
+info | 10-30-2023 01:44:40 | Persistence: mongo
+info | 10-30-2023 01:44:41 | Server listening on port 8080
+info | 10-30-2023 01:46:21 | Persistence: mongo
+info | 10-30-2023 01:46:21 | Server listening on port 8080
+info | 10-30-2023 01:47:44 | Persistence: mongo
+info | 10-30-2023 01:47:44 | Server listening on port 8080
+info | 10-30-2023 01:52:52 | Persistence: mongo
+info | 10-30-2023 01:52:52 | Server listening on port 8080
+info | 10-30-2023 01:55:27 | Persistence: mongo
+info | 10-30-2023 01:55:27 | Server listening on port 8080
+info | 10-30-2023 01:56:21 | Persistence: mongo
+info | 10-30-2023 01:56:21 | Server listening on port 8080
+info | 10-30-2023 02:09:39 | Persistence: mongo
+info | 10-30-2023 02:09:40 | Server listening on port 8080
+info | 10-30-2023 02:11:58 | Persistence: mongo
+info | 10-30-2023 02:11:58 | Server listening on port 8080
+info | 10-30-2023 02:12:38 | Persistence: mongo
+info | 10-30-2023 02:12:38 | Server listening on port 8080

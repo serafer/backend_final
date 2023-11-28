@@ -1,0 +1,58 @@
+<div class="container py-5 ">
+
+    <div>
+
+        <h2>Lista de Productos</h2>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead class="bg-primary text-white">
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Título</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Botón</th>
+
+
+            </tr>
+        </thead>
+        <tbod>
+            {{#each productsMap}}
+            <tr>
+                <td>{{this.code}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.category}}</td>
+                <td>
+                    <form method="POST" action="../api/cart/{{this.cartID}}/prod2/{{this._id}}" >
+                        <button type="submit" class="btn btn-dark btn-block mb-3">Add</button>
+                    </form>
+                </td>
+            {{/each}}
+        </tbod>
+    </table>
+
+    <div class="d-flex justify-content-center mt-3 m-5">
+
+        {{#if hasPrevPage}}
+        <a class="btn btn-dark btn-block mb-3" href="{{prevPage}}">Previous</a>
+        {{/if}}
+
+        <button type="button" class="btn btn-link" disabled data-bs-toggle="button" autocomplete="off"> {{page}}
+        </button>
+
+        {{#if hasNextPage}}
+        <a class="btn btn-dark btn-block mb-3" href="{{nextPage}}">Next</a>
+        {{/if}}
+
+    </div>
+
+</div>
+
+
+

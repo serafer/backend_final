@@ -1,0 +1,712 @@
+components:
+  schema:
+    Users:
+      login:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: message from the server
+          data:
+            type: object
+            description: data from the server
+            properties:
+              email:
+                type: string
+                description: email address
+              password:
+                type: string
+                description: password
+        example:
+          status: 200
+          message: success
+          data:
+            {
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTIyMDA5YWQ2ZTMyNDkzMGRhNTBmMzkiLCJpYXQiOjE2OTc1MTQzMjAsImV4cCI6MTY5NzUxNTUyMH0.rjj5TmaEHDOIS8KauZX_5GS1XRRCR6dKOZ4h1c3xk0o"
+            }
+
+    Products:
+      ok_getproduct:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: list of products (Paginate)
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: Mongo ID
+              title:
+                type: string
+                description: name of the product
+              description:
+                type: string
+                description: description of the product
+              code:
+                type: string
+                description: code of the product
+              price:
+                type: number
+                description: price of the product
+              status:
+                type: boolean
+                description: status of the product
+              stock:
+                type: number
+                description: stock of the product
+              category:
+                type: string
+                description: categoty of the product
+              thumbnails:
+                type: string
+                description: image of the product
+              owner:
+                type: string
+                description: ID number of the owner of the product or ADMIN as default
+        example:
+          status: 200
+          message: success
+          data:
+            {
+              _id: 64bf22c4ff8965169aaf06e0,
+              title: Ron Havana Club Añejo 7 años,
+              description: Ron cubano añejo con un equilibrio de sabores excepcional.,
+              code: HC011,
+              price: 1500,
+              status: true,
+              stock: 22,
+              category: Ron,
+              thumbnails: https://senseoftaste.com.au/cdn/shop/products/SOTE-Commresizing4_43_800x.png?v=1630558437,
+              owner: admin,
+            }
+
+      ok_getProductById:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Product found Successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: Mongo ID
+              title:
+                type: string
+                description: name of the product
+              description:
+                type: string
+                description: description of the product
+              code:
+                type: string
+                description: code of the product
+              price:
+                type: number
+                description: price of the product
+              status:
+                type: boolean
+                description: status of the product
+              stock:
+                type: number
+                description: stock of the product
+              category:
+                type: string
+                description: categoty of the product
+              thumbnails:
+                type: string
+                description: image of the product
+              owner:
+                type: string
+                description: ID number of the owner of the product or ADMIN as default
+        example:
+          status: 200
+          message: success
+          data:
+            {
+              _id: 64bf22c4ff8965169aaf06e0,
+              title: Ron Havana Club Añejo 7 años,
+              description: Ron cubano añejo con un equilibrio de sabores excepcional.,
+              code: HC011,
+              price: 1500,
+              status: true,
+              stock: 22,
+              category: Ron,
+              thumbnails: https://senseoftaste.com.au/cdn/shop/products/SOTE-Commresizing4_43_800x.png?v=1630558437,
+              owner: admin,
+            }
+
+      ok_addProduct:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Product created successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: Mongo ID
+              title:
+                type: string
+                description: name of the product
+              description:
+                type: string
+                description: description of the product
+              code:
+                type: string
+                description: code of the product
+              price:
+                type: number
+                description: price of the product
+              status:
+                type: boolean
+                description: status of the product
+              stock:
+                type: number
+                description: stock of the product
+              category:
+                type: string
+                description: categoty of the product
+              thumbnails:
+                type: string
+                description: image of the product
+              owner:
+                type: string
+                description: ID number of the owner of the product or ADMIN as default
+        example:
+          status: 200
+          message: success
+          data:
+            {
+              _id: 64bf22c4ff8965169aaf06e0,
+              title: Ron Havana Club Añejo 7 años,
+              description: Ron cubano añejo con un equilibrio de sabores excepcional.,
+              code: HC011,
+              price: 1500,
+              status: true,
+              stock: 22,
+              category: Ron,
+              thumbnails: https://senseoftaste.com.au/cdn/shop/products/SOTE-Commresizing4_43_800x.png?v=1630558437,
+              owner: admin,
+            }
+
+      ok_updateProduct:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Product found Successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: Mongo ID
+              title:
+                type: string
+                description: name of the product
+              description:
+                type: string
+                description: description of the product
+              code:
+                type: string
+                description: code of the product
+              price:
+                type: number
+                description: price of the product
+              status:
+                type: boolean
+                description: status of the product
+              stock:
+                type: number
+                description: stock of the product
+              category:
+                type: string
+                description: categoty of the product
+              thumbnails:
+                type: string
+                description: image of the product
+              owner:
+                type: string
+                description: ID number of the owner of the product or ADMIN as default
+        example:
+          status: 200
+          message: success
+          data:
+            {
+              _id: 64bf22c4ff8965169aaf06e0,
+              title: Ron Havana Club Añejo 7 años,
+              description: Ron cubano añejo con un equilibrio de sabores excepcional.,
+              code: HC011,
+              price: 1500,
+              status: true,
+              stock: 22,
+              category: Ron,
+              thumbnails: https://senseoftaste.com.au/cdn/shop/products/SOTE-Commresizing4_43_800x.png?v=1630558437,
+              owner: admin,
+            }
+
+      ok_deleteProduct:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Product deleted successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: Mongo ID
+              title:
+                type: string
+                description: name of the product
+              description:
+                type: string
+                description: description of the product
+              code:
+                type: string
+                description: code of the product
+              price:
+                type: number
+                description: price of the product
+              status:
+                type: boolean
+                description: status of the product
+              stock:
+                type: number
+                description: stock of the product
+              category:
+                type: string
+                description: categoty of the product
+              thumbnails:
+                type: string
+                description: image of the product
+              owner:
+                type: string
+                description: ID number of the owner of the product or ADMIN as default
+        example:
+          status: 200
+          message: success
+          data:
+            {
+              _id: 64bf22c4ff8965169aaf06e0,
+              title: Ron Havana Club Añejo 7 años,
+              description: Ron cubano añejo con un equilibrio de sabores excepcional.,
+              code: HC011,
+              price: 1500,
+              status: true,
+              stock: 22,
+              category: Ron,
+              thumbnails: https://senseoftaste.com.au/cdn/shop/products/SOTE-Commresizing4_43_800x.png?v=1630558437,
+              owner: admin,
+            }
+
+    Cart:
+      ok_getCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: List of carts
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Array of products associated
+        example:
+          status: 200
+          message: success
+          data:
+            [
+              {
+                _id: "650a770add40087430f909a8",
+                products:
+                  [{ ProductID: "64bf22c4ff8965169aaf06e0", quantity: 2 }],
+              },
+              { _id: "64e57fdc43dc1de9fe20e184", products: [] },
+            ]
+
+      ok_createCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Cart created successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Empty Array of products associated
+        example:
+          status: 200
+          message: success
+          data: { _id: "650a770add40087430f909a8", products: [] }
+
+      ok_getCartById:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Cart found successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Array of products associated
+        example:
+          status: 200
+          message: success
+          data:
+            [
+              {
+                _id: "650a770add40087430f909a8",
+                products:
+                  [{ ProductID: "64bf22c4ff8965169aaf06e0", quantity: 2 }],
+              },
+              { _id: "64e57fdc43dc1de9fe20e184", products: [] },
+            ]
+
+      ok_cleanCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Cart cleaned successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Empty array of products
+        example:
+          status: 200
+          message: success
+          data: { _id: "650a770add40087430f909a8", products: [] }
+
+      ok_updateCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Cart updated successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Array of products updated
+        example:
+          status: 200
+          message: success
+          data:
+            [
+              {
+                _id: "650a770add40087430f909a8",
+                products:
+                  [{ ProductID: "64bf22c4ff8965169aaf06e0", quantity: 2 }],
+              },
+            ]
+
+      ok_saveProductToCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Product added to cart saccessfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Array of products
+        example:
+          status: 200
+          message: success
+          data:
+            [
+              {
+                _id: "650a770add40087430f909a8",
+                products:
+                  [{ ProductID: "64bf22c4ff8965169aaf06e0", quantity: 2 }],
+              },
+            ]
+
+      ok_deleteProductInCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Delete product in cart
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Array of products
+        example:
+          status: 200
+          message: success
+          data:
+            [
+              {
+                _id: "650a770add40087430f909a8",
+                products:
+                  [{ ProductID: "64bf22c4ff8965169aaf06e0", quantity: 2 }],
+              },
+            ]
+
+      ok_updateQuantityInCart:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Product added to cart saccessfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              _id:
+                type: string
+                description: ID of the Cart
+              products:
+                type: array
+                description: Array of products
+        example:
+          status: 200
+          message: success
+          data:
+            [
+              {
+                _id: "650a770add40087430f909a8",
+                products:
+                  [{ ProductID: "64bf22c4ff8965169aaf06e0", quantity: 2 }],
+              },
+            ]
+
+      ok_generateTicket:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Purchase generated successfully
+          data:
+            type: object
+            description: Data from response
+            properties:
+              ticket:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    description: ID of purchase
+                  purchase_datetime:
+                    type: date
+                    description: Date of purchase
+                  amount:
+                    type: number
+                    description: Total amount of purchase
+                  purchaser:
+                    type: string
+                    description: Id of purchaser
+                  products:
+                    type: object
+                    description: List of products purchased
+                    properties:
+                      ProductID:
+                        type: string
+                        description: Id of product
+                      quantity:
+                        type: number
+                        description: quantity of products purchased
+                  _id:
+                    type: string
+                    description: Id of purchase
+              productsNotPurchased:
+                type: array
+                description: List of products not purchased
+              user:
+                type: object
+                description: Purchaser user
+                properties:
+                  _id:
+                    type: string
+                    description: Id of purchaser user
+        example:
+          status: 200
+          message: success
+          data:
+            {
+              ticket:
+                {
+                  code: "0.03439760985270568",
+                  purchase_datetime: "16/10/2023 22:59:00",
+                  amount: 1200,
+                  purchaser: "6522009ad6e324930da50f39",
+                  products:
+                    [
+                      {
+                        "ProductID": "64bf228eff8965169aaf06d4",
+                        "quantity": 1,
+                        "price": 1200,
+                        "_id": "652dea6467445155af428e74",
+                      },
+                    ],
+                },
+              productsNotPurchased: ["64bf22c4ff8965169aaf06e0"],
+              user: { _id: "6522009ad6e324930da50f39" },
+            }
+
+    Error:
+      notFound:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Not foud message
+          data:
+            type: object
+            description: Data from response
+        example:
+          status: 404,
+          message: Not Found,
+          error: Product Not found
+
+      unauthirized:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Unauthorized error message
+          data:
+            type: object
+            description: Data from response
+        example:
+          status: 401,
+          message: Unauthorized,
+          error: User is not authorized
+
+      forbidden:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Fobidden error message
+          data:
+            type: object
+            description: Data from response
+        example:
+          status: 403,
+          message: Fobidden,
+          error: Fobidden
+
+      internalServerError:
+        type: object
+        properties:
+          status:
+            type: number
+            description: HTTP status code
+          message:
+            type: string
+            description: Server error message
+          data:
+            type: object
+            description: Data from response
+        example:
+          status: 500,
+          message: Interrnal Server Error,
+          error: Interrnal Server Error

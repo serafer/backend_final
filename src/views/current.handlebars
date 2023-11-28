@@ -1,0 +1,37 @@
+<section class=" gradient-custom">
+    <div class="container py-3 ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-4 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-1">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Profile</h2>
+
+                            {{#if user.isGithub }}
+
+                            <p>Name/Username: {{{user.first_name}}} </p>
+                            <p>Email: {{{user.email}}} </p>
+                            <p> Loging with: Github </p>
+
+                            {{else}}
+
+                            <p>First Name: {{{user.first_name}}} </p>
+                            <p>Last Name: {{{user.last_name}}} </p>
+                            <p>Email: {{{user.email}}} </p>
+                            <p>Age: {{{user.age}}} </p>
+                            <p> Loging with: LocalPassport </p>
+
+                            {{/if}}
+
+                            <button class="btn btn-outline-light btn-lg px-5" onclick="location.href='/products'">Go to:
+                                Products List</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

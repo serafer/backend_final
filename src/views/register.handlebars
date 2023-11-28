@@ -1,0 +1,76 @@
+
+<section class=" gradient-custom">
+    <div class="container py-1 ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-4 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-1">
+                            <form action='/api/users/register' method="post">
+                                <h2 class="fw-bold mb-2 text-uppercase">Singup</h2>
+                                <p class="text-white-50 mb-5">Create a new account</p>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" name='first_name' id='first_name' class="form-control form-control-lg"
+                                        placeholder="First Name" />
+                                    <label class="form-label" for="first_name">First Name</label>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" name='last_name' id='last_name' class="form-control form-control-lg"
+                                        placeholder="Last name" />
+                                    <label class="form-label" for="last_name">Last name</label>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" name="email" id="email" class="form-control form-control-lg"
+                                        placeholder="somebody@example.com" />
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="password" name="password" id="password"
+                                        class="form-control form-control-lg" placeholder="Password" />
+                                    <label class="form-label" for="password">Password</label>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="number" name='age' id='age' 
+                                        class="form-control form-control-lg" placeholder="Age" />
+                                    <label class="form-label" for="age">Age</label>
+                                </div>
+
+                                {{!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot
+                                        password?</a>
+                                </p> --}}
+
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
+
+
+                        </div>
+
+                        </form>
+                        <div class="form-outline form-white mb-5">
+
+                            {{!-- <p>- or -</p>
+                        </div>
+
+                        <div class="form-outline form-white mb-4">
+
+                            <button class="btn btn-outline-light btn-lg px-5"
+                                onclick="location.href='/api/users/register-github'"> <i class="bi bi-github"></i>
+                                Login with Github</button>
+                        </div> --}}
+                        <div>
+                            <p class="mb-0">Already have an account? <a href="/login"
+                                    class="text-white-50 fw-bold">Log In</a> </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

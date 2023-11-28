@@ -1,0 +1,740 @@
+paths:
+
+  /api/users/loginApi:
+    post:
+      tags:
+        - Users
+      summary: Login api endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/Users"
+      responses:
+        200:
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Users/login"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  /api/products:
+    post:
+      tags:
+        - Products
+      summary: Create a new product, requires to be logged in as Admin or Premium role.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/Products"
+        required: true
+      responses:
+        200:
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Products/ok_addProduct"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+    get:
+      tags:
+        - Products
+      summary: Get a list of all products
+      responses:
+        200:
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Products/ok_getproduct"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  /api/products/{id}:
+    get:
+      tags:
+        - Products
+      summary: Get a product by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Product find by id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Products/ok_getProductById"
+
+        404:
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+    put:
+      tags:
+        - Products
+      summary: Update data of a product looking for a product with the id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/parameters/schemas/Products"
+        required: true
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Updated product
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Products/ok_updateProduct"
+
+        404:
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+    delete:
+      tags:
+        - Products
+      summary: Dalete a product from de data base 
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Deleted product
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Products/ok_deleteProduct"
+
+        404:
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  /api/cart:
+    get:
+      tags:
+        - Cart
+      summary: Get a list of all cart
+      responses:
+        200:
+          description: List of all cart
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_getCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+    post:
+      tags:
+        - Cart
+      summary: Create a new Cart
+      responses:
+        200:
+          description: New Cart created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_getCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  /api/cart/{id}:
+    get:
+      tags:
+        - Cart
+      summary: Get a cart by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Cart found successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_getCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+    delete:
+      tags:
+        - Cart
+      summary: Clean a Cart
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Cart cleaned successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_cleanCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+    put:
+      tags:
+        - Cart
+      summary: Update a Cart
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Cart updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_updateCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  /api/cart/{id}/prod/{productId}:
+    post:
+      tags:
+        - Cart
+      summary: Add a product to the cart
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+        - in: path
+          name: productId
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Product added successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_saveProductToCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+    delete:
+      tags:
+        - Cart
+      summary: Delete product from Cart
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+        - in: path
+          name: productId
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Product was successfully deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_deleteProductInCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+    put:
+      tags:
+        - Cart
+      summary: Update quantity of a product in the cart
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+        - in: path
+          name: productId
+          required: true
+          description: Product id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Quantity updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_updateQuantityInCart"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  
+  /api/cart/{id}/purchase:
+    post:
+      tags:
+        - Cart
+      summary: Generates purchase instrcting ID of cart
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Cart id
+          schema:
+            type: string
+      responses:
+        200:
+          description: Purchase generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/ok_generateTicket"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
+  
+  /api/cart/purchase:
+    post:
+      tags:
+        - Cart
+      summary: Generates purchase detecting the user's cart ID
+      responses:
+        200:
+          description: Purchase generated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Cart/generateTicket"
+
+        404:
+          description: Not found message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/notFound"
+
+        401:
+          description: Unauthorized error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/unauthirized"
+
+        403:
+          description: Fobidden error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/forbidden"
+
+        500:
+          description: Server error message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schema/Error/internalServerError"
+
