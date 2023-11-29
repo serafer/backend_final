@@ -1,7 +1,7 @@
 import { createLogger, format, transports, addColors } from 'winston';
 import winston from 'winston';
 const { combine, printf, timestamp, colorize } = format;
-import { __dirname } from './utils.js';
+import { __dirname } from '../utils.js';
 
 
 const customLogger = {
