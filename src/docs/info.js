@@ -9,6 +9,9 @@ export const info = {
         servers: [
             {
                 url: 'http://localhost:8080'
+            },
+            {
+                url: 'https://backendfinal-production-49bd.up.railway.app/'
             }
         ]
     },
