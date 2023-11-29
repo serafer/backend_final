@@ -54,7 +54,7 @@ if (enviroment === "dev") {
             printf((info) => `${info.level} | ${info.timestamp} | ${info.message}`)
         ),
         transports: [new transports.File({
-            filename: `${__dirname}/../logs/errors.log`
+            filename: `${__dirname}/../logs/errors-${new Date().getTime()}.log`
         })],
 
 
