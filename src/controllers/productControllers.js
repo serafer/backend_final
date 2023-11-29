@@ -21,10 +21,10 @@ export const getproduct = async (req, res, next) => {
 
 
       const nextPage = response.hasNextPage
-        ? `http://localhost:8080/api/products?page=${response.nextPage}`
+        ? `../api/products?page=${response.nextPage}`
         : null;
       const prevPage = response.hasPrevPage
-        ? `http://localhost:8080/api/products?page=${response.prevPage}`
+        ? `../api/products?page=${response.prevPage}`
         : null;
       const existHasPrevPage = response.hasPrevPage ? true : false;
       const existHasNextPage = response.hasNextPage ? true : false;
@@ -60,10 +60,10 @@ export const getproductPaginate = async (req, res, next) => {
       filterValue
     );
     const nextPage = response.hasNextPage
-      ? `http://localhost:8080/products?page=${response.nextPage}`
+      ? `../products?page=${response.nextPage}`
       : null;
     const prevPage = response.hasPrevPage
-      ? `http://localhost:8080/products?page=${response.prevPage}`
+      ? `../products?page=${response.prevPage}`
       : null;
     const existHasPrevPage = response.hasPrevPage ? true : false;
     const existHasNextPage = response.hasNextPage ? true : false;
