@@ -53,7 +53,7 @@ if (enviroment === "dev") {
             printf((info) => `${info.level} | ${info.timestamp} | ${info.message}`)
         ),
         transports: [new transports.File({
-            filename: `${fileURLToPath(import.meta.url)}/../logs/errors.log`
+            filename: `${__dirname}/../logs/errors.log`
         })],
 
 
